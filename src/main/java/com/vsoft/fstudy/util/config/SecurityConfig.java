@@ -38,9 +38,9 @@ public class SecurityConfig {
     private static final boolean HSTS_PRELOAD = true;
     private static final String[] PERMITTED_PATTERNS = {
         "/swagger-ui/**", 
-        "/v3/api-spec/**", 
+        "/v3/api-docs/**",
         "/error", 
-        "/api/v1/auth", 
+        "/api/v1/auth/**", 
         "/api/v1/health"
     };
 

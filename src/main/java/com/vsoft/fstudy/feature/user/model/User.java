@@ -55,4 +55,15 @@ public class User extends BaseEntity {
     @Column(name = "status", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private UserStatus status;
+
+    public static User createLearner(String email, String passwordHash, String fullName, LocalDate birthDate) {
+        return User.builder()
+            .email(email)
+            .passwordHash(passwordHash)
+            .role(UserRole.LEARNER)
+            .fullName(fullName)
+            .birthDate(birthDate)
+            .status(UserStatus.ACTIVE)
+            .build();
+    }
 }
